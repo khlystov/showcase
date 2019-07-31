@@ -12,7 +12,7 @@ import (
 // IsGood - Http handler for POST /isgood
 func IsGood(c *gin.Context) {
 	var r requests.DeviceCheck
-	fmt.Println(sessions.Store.Cache)
+
 	if err := c.ShouldBindJSON(&r); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"code":    0,
